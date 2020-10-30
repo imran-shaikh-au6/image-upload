@@ -15,6 +15,7 @@ class App extends Component {
         // axios call to fetch the data from backend
         const data = await axios.get("/get-images");
         //storing the fetched data in state
+
         this.setState({ data: data.data });
     }
 

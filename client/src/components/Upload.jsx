@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Upload.css";
 import axios from "axios";
 import imggg from "../images/upload.svg";
 const Upload = () => {
+    const [spin, setSpin] = useState(false);
     const handleNewPost = (e) => {
         e.preventDefault();
+
         // getting input files and checking its extension as images using regex
         const filePath = e.target.files[0].name;
         var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
@@ -15,6 +17,7 @@ const Upload = () => {
             alert("Invalid file type");
             return false;
         } else {
+            setSpin(true);
             const config = {
                 headers: {
                     "content-type": "multipart/form-data",
@@ -24,7 +27,6 @@ const Upload = () => {
                 .post("/add-images", data, config)
                 .then(function (res) {
                     if (res.status === 200) {
-                        alert("uploaded succesffully");
                         window.location.reload();
                     }
                 })
@@ -44,6 +46,7 @@ const Upload = () => {
                     </button>
                     <input type="file" name="file" onChange={handleNewPost} />
                 </div>
+                {spin === false ? null : <div class="loader"></div>}
             </div>
         </div>
     );
