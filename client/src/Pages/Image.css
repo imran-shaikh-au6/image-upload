@@ -57,3 +57,19 @@
     margin-bottom: 2em;
     height: 17em;
 }
+.imgg{
+    height: 15em;
+    width: 21em;
+    border-top-right-radius: 1em;
+    border-top-left-radius:1em ;
+                            
+}
+@media screen and (max-width: 600px) {
+    .imgg{
+    height: 15em;
+    width: 20.5em;
+    border-top-right-radius: 1em;
+    border-top-left-radius:1em ;
+                            
+}
+}

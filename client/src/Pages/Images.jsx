@@ -7,16 +7,8 @@ class Images extends Component {
             <div className="innerWrap">
                 <center>
                     <img
-                      
-                        style={{
-                            height: "15em",
-                            width: "21em",
-                            borderTopLeftRadius: "1em",
-
-                            borderTopRightRadius: "1em",
-                        }}
                         src={this.props.data}
-                        className="card-img-top"
+                        className="card-img-top imgg"
                         alt="..."
                     />{" "}
                 </center>
